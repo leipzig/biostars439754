@@ -30,12 +30,12 @@ rule qc_before_trim:
         r1 = lambda wildcards: getHome(wildcards.sample)[0],
         r2 = lambda wildcards: getHome(wildcards.sample)[1]
     output:
-        "{sample}_R1_fastqc.html",
-        "{sample}_R1_fastqc.zip",
-        "{sample}_R2_fastqc.html",
-        "{sample}_R2_fastqc.zip"
+        os.path.join(dirs_dict["QC_DIR"],config["QC_TOOL"],"before_trim","{sample}_R1_fastqc.html"),
+        os.path.join(dirs_dict["QC_DIR"],config["QC_TOOL"],"before_trim","{sample}_R1_fastqc.zip"),
+        os.path.join(dirs_dict["QC_DIR"],config["QC_TOOL"],"before_trim","{sample}_R2_fastqc.html"),
+        os.path.join(dirs_dict["QC_DIR"],config["QC_TOOL"],"before_trim","{sample}_R2_fastqc.zip")
     params:
-        dir = expand('{QC_DIR}/{QC_TOOL}/before_trim/', QC_DIR=dirs_dict["QC_DIR"], QC_TOOL=config["QC_TOOL"])
+        dir = os.path.join(dirs_dict["QC_DIR"],config["QC_TOOL"],'before_trim')
     resources:
         mem = 1000,
         time = 30
