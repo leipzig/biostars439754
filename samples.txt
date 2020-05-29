@@ -1,0 +1,4 @@
+sample	location
+BC1217	home/moldach/projects/def-mtarailo/common/data/strains_ucalgary/fastq
+470	home/moldach/projects/def-mtarailo/tamaroi/data
+MTG109	home/moldach/projects/def-mtarailo/tamaroi/data/strains_ucalgary/fastq_MTG
